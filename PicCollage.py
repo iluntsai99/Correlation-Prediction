@@ -118,7 +118,7 @@ def main(train_x, dev_x, train_y, dev_y):
         model.train()
         for i, data in enumerate(tqdm(train_loader)):
             if epoch == 0:
-            	print("Note: skipping first training epoch in order to see the loss before training!")
+                print("Note: skipping first training epoch in order to see the loss before training!")
                 break
             optimizer.zero_grad()
             train_pred = model(data[0].cuda())
@@ -146,4 +146,4 @@ def main(train_x, dev_x, train_y, dev_y):
 
 if __name__ == "__main__":
     same_seeds(seed)
-    main(preprocess())
+    main(*preprocess())
